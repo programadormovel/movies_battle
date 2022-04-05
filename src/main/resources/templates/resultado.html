@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="estilo.css" type="text/css" />-->
+</head>
+<body>
+    <h1>Resultado da Jogada</h1>
+    <a href="/partida">Iniciar Partida</a>
+    <a href="/ranking">Ranking</a>
+    <a href="/logout">Sair do Jogo</a>
+
+    <h3>O jogo mais popular dos apresentados é:</h3>
+    <form action="#" th:action="@{/partida}" method="post">
+        <div>
+            <div>
+               [[${filmePopular.title}]]
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="CONTINUAR JOGANDO" >
+        </div>
+        <p>Você escolheu o filme [[${filmeEscolhido.title}]]</p>
+        <p>Sua pontuação é [[${pontuacao}]]</p>
+        <p>Você errou [[${errosJogador}]]</p>
+        <p>No terceiro erro o jogo se encerra!</p>
+    </form>
+</body>
+</html>

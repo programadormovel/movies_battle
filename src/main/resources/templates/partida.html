@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <link rel="stylesheet" href="estilo.css" type="text/css" />-->
+</head>
+<body>
+<xsl:import href="../../../../lumis/doui/style/DouiControls.xsl" ></xsl:import>
+<h1>Partida</h1>
+<div id="menu">
+    <ul>
+        <xsl:for-each select="//control[@type='lum_navigationList']/data/row">
+            <li>
+                <a href="/partida">Iniciar Partida</a>
+                <a href="/ranking">Ranking</a>
+                <a href="/logout">Sair do Jogo</a>
+            </li>
+        </xsl:for-each>
+    </ul>
+</div>
+
+<h3>Adivinhe qual o time mais popular?</h3>
+<!--    <form action="#" th:action="@{/resultado/{id}(id = ${filme2.id})}" th:object="${filme2}" method="post">-->
+<!--    <form action="#" method="post">-->
+<div>
+    <header>
+        <div th:each="filme : ${filmes}">
+            <a th:href="@{/resultado/{id}(id = ${filme.id}) }">[[${filme.title}]]</a>
+        </div>
+    </header>
+</div>
+<!--    </form>-->
+<h4>[[${pontuacao}]]</h4>
+</body>
+</html>

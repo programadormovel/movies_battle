@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking</title>
+</head>
+<body>
+    <h3>Ranking</h3>
+    <a href="/partida">Iniciar Partida</a>
+    <a href="/ranking">Ranking</a>
+    <a href="/logout">Sair do Jogo</a>
+
+    <div>
+        <header>
+            <div th:each="partida : ${partidas}">
+                <span>[[${partida.usuario.username}]] - [[${partida.pontuacao}]]</span>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
